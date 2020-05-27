@@ -1,0 +1,12 @@
+name: 'Test and build'
+description: 'Testing and building'
+inputs:
+  command:  # id of input
+    description: 'Command to run'
+    required: true
+outputs:
+  status: # id of output
+    description: 'success'
+runs:
+  using: 'node12'
+  main: 'index.js'
