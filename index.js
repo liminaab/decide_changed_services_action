@@ -51,7 +51,7 @@ async function prMonorepoRepoLabeler() {
 
   console.log(list, list.join(' '));
 
-  core.setOutput('repos', list.join(' '));
+  core.setOutput('repos', list.reverse().join(' '));
 
   for (const repo of prFilesReposUnique) {
     if (repo) {
