@@ -1,24 +1,25 @@
 {
-  "name": "test_and_build_action",
+  "name": "monorepo_extractor_action",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/liminaab/test_and_build_action.git"
+    "url": "git+https://github.com/liminaab/decide_changed_services_action.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/liminaab/test_and_build_action/issues"
+    "url": "https://github.com/liminaab/decide_changed_services_action/issues"
   },
-  "homepage": "https://github.com/liminaab/test_and_build_action#readme",
+  "homepage": "https://github.com/liminaab/decide_changed_services_action#readme",
   "dependencies": {
-    "@actions/core": "^1.2.4",
-    "@actions/github": "^2.2.0"
+    "@octokit/rest": "^17.9.2",
+    "underscore": "^1.10.2"
   }
 }
