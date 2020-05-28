@@ -45,8 +45,13 @@ async function prMonorepoRepoLabeler() {
   const prFilesReposUnique = _.uniq(prFilesRepos);
 
   console.log(prFilesReposUnique);
+  let list = prFilesReposUnique.map(repo => {
+    return `${baseDirectories}/${repo}`;
+  });
 
-  core.setOutput('repos', prFilesReposUnique);
+  console.log(list, list.join(','));
+
+  core.setOutput('repos', list.join(','));
 
 }
 
