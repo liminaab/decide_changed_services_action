@@ -1,5 +1,8 @@
 name: "Monorepo PR Repo extractor"
 description: "Monorepo PR Repo extractor"
+outputs:
+  repos:
+    description: 'Repos'
 runs:
   using: "docker"
   image: "Dockerfile"

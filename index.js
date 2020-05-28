@@ -1,12 +1,9 @@
 const _ = require('underscore')
 const helpers = require('./helpers')
+const core = require('@actions/core');
 
 console.log('started nodejs...')
 
-//const _ = require('underscore')
-
-//require octokit rest.js
-//more info at https://github.com/octokit/rest.js
 const {Octokit} = require('@octokit/rest')
 const octokit = new Octokit({
   auth: `token ${process.env.GITHUB_TOKEN}`
@@ -27,8 +24,6 @@ async function prMonorepoRepoLabeler() {
   )
   const eventJSON = JSON.parse(eventData);
 
-  console.log(eventJSON);
-
   //set eventAction and eventIssueNumber
   let eventAction = eventJSON.action;
   let eventIssueNumber = eventJSON.pull_request.number;
@@ -41,36 +36,18 @@ async function prMonorepoRepoLabeler() {
     eventIssueNumber
   );
 
-  console.log(prFiles);
-
   //get monorepo repo for each file
   prFilesRepos = prFiles.map(({ filename }) =>
     helpers.getMonorepo(baseDirectories, filename)
   )
-
-  console.log(prFilesRepos);
 
   //reduce to unique repos
   const prFilesReposUnique = _.uniq(prFilesRepos);
 
   console.log(prFilesReposUnique);
 
-  //add label for each monorepo repo
-  // for (const repo of prFilesReposUnique) {
-  //   if (repo) {
-  //     console.log(`labeling repo: ${repo}`)
+  core.setOutput('repos', prFilesReposUnique);
 
-  //     const repoLabel = `📁 Repo: ${repo}`
-
-  //     helpers.addLabel(
-  //       octokit,
-  //       eventOwner,
-  //       eventRepo,
-  //       eventIssueNumber,
-  //       repoLabel
-  //     )
-  //   }
-  // }
 }
 
 //run the function
