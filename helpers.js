@@ -52,3 +52,25 @@ module.exports.getMonorepo = function(baseDirectories, filePath) {
   if (found) return found[1]
   else return false
 }
+
+module.exports.addLabel = function(
+    octokit,
+    eventOwner,
+    eventRepo,
+    eventIssueNumber,
+    label
+  ) {
+    octokit.issues
+      .addLabels({
+        owner: eventOwner,
+        repo: eventRepo,
+        issue_number: eventIssueNumber,
+        labels: [label] // ['Label 1']
+      })
+      .then(({ data, headers, status }) => {
+        // handle data
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }

@@ -53,6 +53,22 @@ async function prMonorepoRepoLabeler() {
 
   core.setOutput('repos', list.join(' '));
 
+  for (const repo of prFilesReposUnique) {
+    if (repo) {
+      console.log(`labeling repo: ${repo}`)
+
+      const repoLabel = `📁 Repo: ${repo}`
+
+      helpers.addLabel(
+        octokit,
+        eventOwner,
+        eventRepo,
+        eventIssueNumber,
+        repoLabel
+      )
+    }
+  }
+
 }
 
 //run the function
