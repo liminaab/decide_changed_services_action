@@ -49,9 +49,9 @@ async function prMonorepoRepoLabeler() {
     return `${process.env.BASE_DIRS}/${repo}`;
   });
 
-  console.log(list, list.join(','));
+  console.log(list, list.join(' '));
 
-  core.setOutput('repos', list.join(','));
+  core.setOutput('repos', list.join(' '));
 
 }
 
