@@ -46,7 +46,7 @@ async function prMonorepoRepoLabeler() {
 
   console.log(prFilesReposUnique);
   let list = prFilesReposUnique.map(repo => {
-    return `${baseDirectories}/${repo}`;
+    return `${process.env.BASE_DIRS}/${repo}`;
   });
 
   console.log(list, list.join(','));
