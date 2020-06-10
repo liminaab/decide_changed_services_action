@@ -2,8 +2,6 @@ const _ = require('underscore')
 const helpers = require('./helpers')
 const core = require('@actions/core');
 
-console.log('started nodejs...')
-
 const {Octokit} = require('@octokit/rest')
 const octokit = new Octokit({
   auth: `token ${process.env.GITHUB_TOKEN}`
@@ -49,7 +47,7 @@ async function prMonorepoRepoLabeler() {
     return `${process.env.BASE_DIRS}/${repo}`;
   });
 
-  console.log(list, list.join(' '));
+  console.log(list.join(' '));
 
   core.setOutput('repos', list.reverse().join(' '));
 

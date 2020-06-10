@@ -1,5 +1,5 @@
-name: "Monorepo PR Repo extractor"
-description: "Monorepo PR Repo extractor"
+name: "Detect changed projects action"
+description: "Detect changed projects for monorepo action"
 outputs:
   repos:
     description: 'Repos'
@@ -7,5 +7,5 @@ runs:
   using: "docker"
   image: "Dockerfile"
 branding:
-  icon: "git-merge"
+  icon: "box"
   color: "green"

@@ -1,11 +1,12 @@
 FROM node:12-slim
 
-LABEL "com.github.actions.name"="Monorepo PR Repo extractor"
-LABEL "com.github.actions.description"="Monorepo PR Repo extractor"
-LABEL "com.github.actions.icon"="git-merge"
-LABEL "com.github.actions.color"="green"
+LABEL com.github.actions.name="Detect changed projects action"
+LABEL com.github.actions.description="Detect changed projects for monorepo action"
+LABEL com.github.actions.icon="box"
+LABEL com.github.actions.color="green"
 
-LABEL "maintainer"="Andreas Fürst"
+LABEL maintainer="Andreas Fürst"
+LABEL version="1.0.0"
 
 ADD entrypoint.sh /action/entrypoint.sh
 ADD package.json /action/package.json
