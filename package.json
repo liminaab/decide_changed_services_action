@@ -21,6 +21,6 @@
   "dependencies": {
     "@actions/core": "^1.2.6",
     "@octokit/rest": "^17.9.2",
-    "underscore": "^1.10.2"
+    "underscore": "^1.12.1"
   }
 }
