@@ -20,7 +20,7 @@
   "homepage": "https://github.com/liminaab/decide_changed_services_action#readme",
   "dependencies": {
     "@actions/core": "^1.9.1",
-    "@octokit/rest": "^17.9.2",
+    "@octokit/rest": "^19.0.13",
     "underscore": "^1.12.1"
   }
 }
